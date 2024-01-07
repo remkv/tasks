@@ -1,0 +1,28 @@
+<!-- Third Task -->
+<html>
+    <body>
+        <h1>Welcome to the Country Details</h1>
+    <script>
+    const xhr = new XMLHttpRequest();
+    const url =  "https://restcountries.com/v3.1/all";
+    xhr.onreadystatechange = function () {
+    if (xhr.readyState === XMLHttpRequest.DONE){
+        if (xhr.status === 200){
+            const response = JSON.parse(xhr.responseText);
+            var flag = [];
+            for (let i=0;i<response.length;i++){
+               console.log("Country Name : " + response[i].name.common);
+               console.log("Region : " + response[i].region);
+               console.log("Sub Region :  " + response[i].subregion);
+               console.log("Population : " + response[i].population);
+            }
+        } else{
+            console.log("There is problem with the request");
+        }
+    }
+};
+    xhr.open('GET',url,true);
+    xhr.send();
+    </script>
+    </body>
+</html>
