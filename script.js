@@ -1,4 +1,4 @@
-function startTimer(){
+
     const h1 = document.createElement('h1');
     h1.style.cssText += 'color: blue; text-align:center';
     document.getElementById("root").appendChild(h1);
@@ -36,6 +36,6 @@ setTimeout(function() {
         }, 1000);
     }, 1000);
 }, 1000);
-}
+
 
 
